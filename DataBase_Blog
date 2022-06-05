@@ -1,0 +1,43 @@
+create database Blog;
+create table users(
+name varchar(50) not null,
+surname varchar(75) not null,
+email varchar(100) not null unique,
+password text not null,
+birthdate date not null
+);
+
+Insert into users (name,surname,email,password,birthdate)
+values('Evgeniy','Klivets', 'evgen@gamilcom','evgen','1997-04-08');
+Insert into users (name,surname,email,password,birthdate)
+values('Kostia','Spatar', 'kostia@gamilcom','kostia','1996-05-06');
+Insert into users (name,surname,email,password,birthdate)
+values('Vladislav','Belov', 'vlad@gamilcom','vlad','1996-04-08');
+Insert into users (name,surname,email,password,birthdate)
+values('Rostik','Belov', 'rostik@gamilcom','rostik','1999-05-09');
+Insert into users (name,surname,email,password,birthdate)
+values('Roman', 'Plis', 'roma@gamilcom','roma','2000-10-12');
+
+create table categories(
+name varchar(50) not null unique,
+description text,
+image text
+);
+
+create table posts(
+user_id int,
+category_id int,
+title varchar(255) not null unique,
+body text not null,
+image text not null,
+created_at datetime not null,
+updated_at datetime
+);
+
+select * from users;
+select * from categories;
+select * from posts;
+
+/*Drop table */
+/*update users set name="maksim" where name = */
+/*delete from users where namne = ;*/
